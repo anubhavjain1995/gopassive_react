@@ -1,0 +1,52 @@
+@import "./media-queries.scss";
+
+.scroll-to-icon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  opacity: 0.3;
+  max-width: 50px;
+  max-height: 50px;
+  @include xs {
+    max-height: 25px !important;
+    max-width: 25px !important;
+  }
+}
+
+.scroll-to-icon:hover {
+  opacity: 1;
+}
+
+.rounded-btn {
+  @include xs {
+    max-height: 32px !important;
+  }
+}
+
+.Toastify {
+  .my-frenzi-toast {
+    z-index: 999999;
+  }
+}
+
+select:focus-visible,
+div:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none !important;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overflow-no-scroll{
+  overflow-x: auto;
+}
+.overflow-no-scroll::-webkit-scrollbar{
+  display: none;
+}

@@ -1,0 +1,530 @@
+@import "./media-queries.scss";
+
+body {
+  --primary-color: #1a1a2e;
+  --background-color: #000;
+  --secondary-color: #16213e;
+  --text-light-grey-color: #b7b6b9;
+  --selected-color: #e94560;
+  --light-color: #fff;
+  --green-color: #1daa10;
+  --dark-color: #000;
+  --muted-color: #b7b6b9;
+  --text-dark-grey-color: #979797;
+  --grey-color: #2f2e41;
+  --violet-color: #474463;
+  --light-violet-color: #938f99;
+  --gun-powder-color: #3f3d56;
+  --pink-color: #ffc1c8;
+  --selected-dark-color: #c0334a;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+input,
+label,
+li {
+  color: var(--light-color);
+  font-family: "Gill Sans Nova" !important;
+}
+
+.text-light-grey {
+  color: var(--text-light-grey-color) !important;
+}
+
+svg.MuiSvgIcon-root.text-light-grey {
+  color: var(--text-light-grey-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.text-muted {
+  color: var(--muted-color) !important;
+}
+
+.text-green {
+  color: var(--green-color) !important;
+}
+
+.text-selected {
+  color: var(--selected-color) !important;
+}
+
+.text-pink {
+  color: var(--pink-color) !important;
+}
+
+button svg.text-selected {
+  color: var(--selected-color) !important;
+}
+
+div svg.text-selected {
+  color: var(--selected-color) !important;
+}
+
+.text-light {
+  color: var(--light-color) !important;
+}
+
+.text-dark {
+  color: var(--dark-color) !important;
+}
+.text-dark-grey {
+  color: var(--text-dark-grey-color) !important;
+}
+.text-violet {
+  color: var(--light-violet-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+.bg-light {
+  background-color: var(--light-color) !important;
+}
+
+.bg-selected {
+  background-color: var(--selected-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.bg-muted {
+  background-color: var(--muted-color) !important;
+}
+.bg-grey {
+  background-color: var(--grey-color) !important;
+}
+.bg-violet {
+  background-color: var(--violet-color) !important;
+}
+.bg-gunpowder {
+  background-color: var(--gun-powder-color) !important;
+}
+.bg-pink {
+  background-color: var(--pink-color) !important;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Gill Sans Nova" !important;
+}
+.bg-green {
+  background-color: #1daa10;
+}
+
+.relative {
+  position: relative !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-block {
+  display: block !important;
+}
+
+// dynamic and responsive padding and margin :-
+// example pt-1,mt-1 .... p-1,m-1 .
+// Note the value will be in pixels
+
+$sides: (top, bottom, left, right);
+
+@for $i from 1 through 500 {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$i} {
+      @include xs {
+        margin-#{$side}: #{$i/3.5}px !important;
+      }
+      @include sm {
+        margin-#{$side}: #{$i/2.5}px !important;
+      }
+      @include md {
+        margin-#{$side}: #{$i/1.5}px !important;
+      }
+      @include lg {
+        margin-#{$side}: #{$i}px !important;
+      }
+      @include xl {
+        margin-#{$side}: #{$i * 1.5}px !important;
+      }
+    }
+    .p#{str-slice($side, 0, 1)}-#{$i} {
+      @include xs {
+        padding-#{$side}: #{$i/4.5}px !important;
+      }
+      @include sm {
+        padding-#{$side}: #{$i/2.5}px !important;
+      }
+      @include md {
+        padding-#{$side}: #{$i/1.5}px !important;
+      }
+      @include lg {
+        padding-#{$side}: #{$i}px !important;
+      }
+      @include xl {
+        padding-#{$side}: #{$i * 1.5}px !important;
+      }
+    }
+  }
+  .m-#{$i} {
+    @include xs {
+      margin: #{$i/3}px !important;
+    }
+    @include sm {
+      margin: #{$i/2}px !important;
+    }
+    @include md {
+      margin: #{$i/1.5}px !important;
+    }
+    @include lg {
+      margin: #{$i}px !important;
+    }
+    @include xl {
+      margin: #{$i * 1.5}px !important;
+    }
+  }
+  .p-#{$i} {
+    @include xs {
+      padding: #{$i/3}px !important;
+    }
+    @include sm {
+      padding: #{$i/2}px !important;
+    }
+    @include md {
+      padding: #{$i/1.5}px !important;
+    }
+    @include lg {
+      padding: #{$i}px !important;
+    }
+    @include xl {
+      padding: #{$i * 1.5}px !important;
+    }
+  }
+}
+
+@for $i from 1 through 999 {
+  .mw-#{$i} {
+    max-width: #{$i}px !important;
+  }
+  .mh-#{$i} {
+    max-height: #{$i}px !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .mwr-#{$i} {
+    max-width: #{$i}vw !important;
+  }
+  .mhr-#{$i} {
+    max-height: #{$i}vh !important;
+  }
+}
+
+@for $i from 100 through 900 {
+  .fw-#{$i} {
+    font-weight: #{$i} !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .vh-#{$i} {
+    height: #{$i}vh !important;
+  }
+  .wv-#{$i} {
+    width: #{$i}vw !important;
+  }
+  .h-#{$i} {
+    height: #{$i}% !important;
+  }
+  .w-#{$i} {
+    width: #{$i}% !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .fs-#{$i} {
+    @include xs {
+      font-size: #{$i/1.8}px !important;
+    }
+    @include sm {
+      font-size: #{$i/1.5}px !important;
+    }
+    @include md {
+      font-size: #{$i/1.2}px !important;
+    }
+    @include lg {
+      font-size: #{$i}px !important;
+    }
+    @include xl {
+      font-size: #{$i * 1.2}px !important;
+    }
+  }
+  .lh-#{$i} {
+    @include xs {
+      line-height: #{$i/1.8}px !important;
+    }
+    @include sm {
+      line-height: #{$i/1.5}px !important;
+    }
+    @include md {
+      line-height: #{$i/1.2}px !important;
+    }
+    @include lg {
+      line-height: #{$i}px !important;
+    }
+    @include xl {
+      line-height: #{$i * 1.2}px !important;
+    }
+  }
+  .ls-#{$i} {
+    letter-spacing: #{$i/10}px !important;
+  }
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.t-underline {
+  text-decoration: underline;
+}
+input:focus-visible {
+  outline: none !important;
+}
+
+.rounded-btn {
+  border-radius: 40px !important;
+  height: 44px !important;
+  width: 100%;
+  border: 0;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  position: relative;
+  .MuiAvatar-root {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+  }
+  @include xs {
+    height: 24px;
+    border-radius: 20px !important;
+    width: 75%;
+  }
+  @include sm {
+    height: 30px;
+    border-radius: 26px !important;
+    width: 80%;
+  }
+  @include md {
+    height: 36px;
+    border-radius: 32px !important;
+    width: 90%;
+  }
+  @include lg {
+    height: 44px;
+    border-radius: 40px !important;
+    width: 100%;
+  }
+  @include xl {
+    height: 50px;
+    border-radius: 46px !important;
+    width: 100%;
+  }
+}
+
+.MuiFormControl-root label,
+svg.MuiSvgIcon-root,
+.MuiFormControl-root input {
+  color: var(--light-color) !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a,
+a button {
+  text-decoration: none !important;
+}
+
+.MuiPaper-root {
+  background-color: var(--background-color) !important;
+}
+// DISPLAY
+
+.relative {
+  position: relative;
+}
+.f-1 {
+  flex: 1;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.ai-center {
+  align-items: center !important;
+}
+.jc-center {
+  justify-content: center !important;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+
+// BORDER Radius
+
+@for $i from 0 through 100 {
+  .br-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+}
+
+.br-5 {
+  border-radius: 5px !important;
+}
+.br-1 {
+  border-radius: 10px !important;
+}
+.br-15 {
+  border-radius: 15px !important;
+}
+.br-2 {
+  border-radius: 20px !important;
+}
+.br-25 {
+  border-radius: 25px !important;
+}
+.br-3 {
+  border-radius: 30px !important;
+}
+.wh-border {
+  border: 4px solid #d9d9d9;
+}
+// padding margin 0
+
+.p-0 {
+  padding: 0 !important;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+// 3d carousel
+.react-3d-carousel .slider-container {
+  width: 100% !important;
+  .slider-content {
+    width: 85% !important;
+  }
+}
+
+.carousel-root {
+  li.dot {
+    height: 9.5px;
+    width: 9.5px;
+    background: #d9d9d9;
+    @include xs {
+      height: 4.5px !important;
+      width: 4.5px !important;
+    }
+  }
+  li.dot.selected {
+    background: var(--selected-color);
+    width: 100%;
+    max-width: 57px;
+    border-radius: 100px;
+    height: 9.5px;
+    @include xs {
+      height: 4.5px !important;
+      width: 100% !important;
+    }
+  }
+}
+
+.section-border-bottom {
+  border-bottom: 2px solid #2f2e41;
+}
+
+.app-container {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  @include xs {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  @include sm {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  @include md {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+  }
+}
+
+.react-multi-carousel-list {
+  @include xs {
+    overflow-x: auto !important;
+    .react-multiple-carousel__arrow {
+      display: none;
+    }
+  }
+  @include sm {
+    overflow-x: auto !important;
+    .react-multiple-carousel__arrow {
+      display: none;
+    }
+  }
+}
+
+.react-multi-carousel-list::-webkit-scrollbar {
+  display: none;
+}
+
+.fixed-navbar {
+  position: fixed;
+  z-index: 1010;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  
+}
